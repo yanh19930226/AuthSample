@@ -11,6 +11,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.EntityFrameworkCore;
+using MvcCookieSample.Data;
+using MvcCookieSample.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace MvcCookieSample
 {
@@ -32,10 +36,24 @@ namespace MvcCookieSample
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+            //添加DbContext
+            services.AddDbContext<ApplicationDbContext>(options => { options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]); });
+            //添加Identity
+            services.AddIdentity<ApplicationUser, ApplicationUserRole>().AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
+            //修改默认严格密码模式
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireLowercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                //options.Password.RequiredLength = 10;
+            });
             //添加认证授权
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                     .AddCookie(options=> {
-                        options.LoginPath = "/Account/MakeLogin";
+                        options.LoginPath = "/Account/Login";
+                        //options.LoginPath = "/Account/MakeLogin";
                     });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

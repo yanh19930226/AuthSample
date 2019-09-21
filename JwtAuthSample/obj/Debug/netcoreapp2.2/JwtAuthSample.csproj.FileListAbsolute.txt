@@ -11,3 +11,4 @@ E:\Project\Core\JwtAuthSample\obj\Debug\netcoreapp2.2\JwtAuthSample.AssemblyInfo
 E:\Project\Core\JwtAuthSample\obj\Debug\netcoreapp2.2\JwtAuthSample.RazorTargetAssemblyInfo.cache
 E:\Project\Core\JwtAuthSample\obj\Debug\netcoreapp2.2\JwtAuthSample.dll
 E:\Project\Core\JwtAuthSample\obj\Debug\netcoreapp2.2\JwtAuthSample.pdb
+E:\Project\Core\JwtAuthSample\obj\Debug\netcoreapp2.2\JwtAuthSample.csprojAssemblyReference.cache

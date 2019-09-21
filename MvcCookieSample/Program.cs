@@ -7,6 +7,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using MvcCookieSample.Data;
 
 namespace MvcCookieSample
 {
@@ -14,11 +15,13 @@ namespace MvcCookieSample
     {
         public static void Main(string[] args)
         {
-            CreateWebHostBuilder(args).Build().Run();
+            CreateWebHost(args).MigrateDbContext<ApplicationDbContext>((context, services) =>
+                { new ApplicationDbContextSeed().SeedAsync(context, services).Wait(); })
+                .Run();
         }
 
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+        public static IWebHost CreateWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+                .UseStartup<Startup>().Build();
     }
 }

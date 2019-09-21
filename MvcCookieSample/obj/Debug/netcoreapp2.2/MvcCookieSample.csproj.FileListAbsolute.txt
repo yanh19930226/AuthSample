@@ -28,3 +28,6 @@ E:\Project\Core\MvcCookieSample\obj\Debug\netcoreapp2.2\MvcCookieSample.Views.pd
 E:\Project\Core\MvcCookieSample\obj\Debug\netcoreapp2.2\MvcCookieSample.dll
 E:\Project\Core\MvcCookieSample\obj\Debug\netcoreapp2.2\MvcCookieSample.pdb
 E:\Project\Core\MvcCookieSample\obj\Debug\netcoreapp2.2\MvcCookieSample.csproj.CopyComplete
+E:\Project\Core\MvcCookieSample\obj\Debug\netcoreapp2.2\MvcCookieSample.csprojAssemblyReference.cache
+E:\Project\Core\MvcCookieSample\obj\Debug\netcoreapp2.2\Razor\Views\Account\Register.g.cshtml.cs
+E:\Project\Core\MvcCookieSample\obj\Debug\netcoreapp2.2\Razor\Views\Account\Login.g.cshtml.cs
