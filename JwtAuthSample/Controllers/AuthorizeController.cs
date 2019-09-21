@@ -13,7 +13,9 @@ using System.IdentityModel.Tokens.Jwt;
 
 namespace JwtAuthSample.Controllers
 {
+    //[Route("[controller]")]
     [Route("api/[controller]")]
+    [ApiController]
     public class AuthorizeController : Controller
     {
         public JwtSettings _jwtSettings { get; set; }
@@ -21,9 +23,11 @@ namespace JwtAuthSample.Controllers
         {
             _jwtSettings = _jwtSettingsAcesser.Value;
         }
+        [Route("token")]
         [HttpPost]
-        public IActionResult Token(LoginViewModel model)
+        public IActionResult Token([FromBody]LoginViewModel model)
         {
+            //LoginViewModel model = new LoginViewModel() { UserName = "yanh", Pwd = "123" };
             if (ModelState.IsValid)
             {
                 if (!(model.UserName == "yanh" && model.Pwd == "123"))
