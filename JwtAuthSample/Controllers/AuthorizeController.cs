@@ -37,7 +37,10 @@ namespace JwtAuthSample.Controllers
                 var claims = new List<Claim>()
                 {
                     new Claim(ClaimTypes.Name,"yanh"),
-                    new Claim(ClaimTypes.Role,"admin"),
+                    //基于角色的授权(传统Asp.net)
+                    //new Claim(ClaimTypes.Role,"admin"),
+                    //基于Policy的授权
+                    new Claim("SuperAdminOnly","true"),
                 };
                 var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.SecretKey));
                 var cred = new SigningCredentials(key,SecurityAlgorithms.HmacSha256);
