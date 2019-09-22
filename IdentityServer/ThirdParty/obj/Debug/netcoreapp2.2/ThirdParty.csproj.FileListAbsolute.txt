@@ -1,0 +1,11 @@
+E:\Project\IdentityServerSample\ThirdParty\bin\Debug\netcoreapp2.2\ThirdParty.deps.json
+E:\Project\IdentityServerSample\ThirdParty\bin\Debug\netcoreapp2.2\ThirdParty.runtimeconfig.json
+E:\Project\IdentityServerSample\ThirdParty\bin\Debug\netcoreapp2.2\ThirdParty.runtimeconfig.dev.json
+E:\Project\IdentityServerSample\ThirdParty\bin\Debug\netcoreapp2.2\ThirdParty.dll
+E:\Project\IdentityServerSample\ThirdParty\obj\Debug\netcoreapp2.2\ThirdParty.csproj.CoreCompileInputs.cache
+E:\Project\IdentityServerSample\ThirdParty\obj\Debug\netcoreapp2.2\ThirdParty.AssemblyInfoInputs.cache
+E:\Project\IdentityServerSample\ThirdParty\obj\Debug\netcoreapp2.2\ThirdParty.AssemblyInfo.cs
+E:\Project\IdentityServerSample\ThirdParty\bin\Debug\netcoreapp2.2\ThirdParty.pdb
+E:\Project\IdentityServerSample\ThirdParty\obj\Debug\netcoreapp2.2\ThirdParty.dll
+E:\Project\IdentityServerSample\ThirdParty\obj\Debug\netcoreapp2.2\ThirdParty.pdb
+E:\Project\IdentityServerSample\ThirdParty\obj\Debug\netcoreapp2.2\ThirdParty.csprojAssemblyReference.cache

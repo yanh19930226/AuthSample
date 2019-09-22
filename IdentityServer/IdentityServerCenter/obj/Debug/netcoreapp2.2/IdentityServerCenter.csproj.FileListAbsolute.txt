@@ -1,0 +1,14 @@
+E:\Project\IdentityServerSample\IdentityServerCenter\bin\Debug\netcoreapp2.2\IdentityServerCenter.deps.json
+E:\Project\IdentityServerSample\IdentityServerCenter\bin\Debug\netcoreapp2.2\IdentityServerCenter.runtimeconfig.json
+E:\Project\IdentityServerSample\IdentityServerCenter\bin\Debug\netcoreapp2.2\IdentityServerCenter.runtimeconfig.dev.json
+E:\Project\IdentityServerSample\IdentityServerCenter\bin\Debug\netcoreapp2.2\IdentityServerCenter.dll
+E:\Project\IdentityServerSample\IdentityServerCenter\obj\Debug\netcoreapp2.2\IdentityServerCenter.csproj.CoreCompileInputs.cache
+E:\Project\IdentityServerSample\IdentityServerCenter\obj\Debug\netcoreapp2.2\IdentityServerCenter.RazorAssemblyInfo.cache
+E:\Project\IdentityServerSample\IdentityServerCenter\obj\Debug\netcoreapp2.2\IdentityServerCenter.RazorAssemblyInfo.cs
+E:\Project\IdentityServerSample\IdentityServerCenter\obj\Debug\netcoreapp2.2\IdentityServerCenter.AssemblyInfoInputs.cache
+E:\Project\IdentityServerSample\IdentityServerCenter\obj\Debug\netcoreapp2.2\IdentityServerCenter.AssemblyInfo.cs
+E:\Project\IdentityServerSample\IdentityServerCenter\obj\Debug\netcoreapp2.2\IdentityServerCenter.RazorTargetAssemblyInfo.cache
+E:\Project\IdentityServerSample\IdentityServerCenter\bin\Debug\netcoreapp2.2\IdentityServerCenter.pdb
+E:\Project\IdentityServerSample\IdentityServerCenter\obj\Debug\netcoreapp2.2\IdentityServerCenter.dll
+E:\Project\IdentityServerSample\IdentityServerCenter\obj\Debug\netcoreapp2.2\IdentityServerCenter.pdb
+E:\Project\IdentityServerSample\IdentityServerCenter\obj\Debug\netcoreapp2.2\IdentityServerCenter.csprojAssemblyReference.cache
