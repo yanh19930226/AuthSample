@@ -30,7 +30,19 @@ namespace MvcClient
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
+            //添加OpenIDConnect
+            services.AddAuthentication(options =>
+            {
+                options.DefaultScheme = "Cookies";
+                options.DefaultChallengeScheme = "oidc";
+            }).AddOpenIdConnect("oidc", options => {
+                options.SignInScheme = "";
+                options.Authority = "http://localhost:5000";
+                options.RequireHttpsMetadata = false;
+                options.ClientId = "mvc";
+                options.ClientSecret = "secret";
+                options.SaveTokens = true;
+            });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

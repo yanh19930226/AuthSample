@@ -64,3 +64,4 @@ E:\Project\Core\IdentityServer\MvcCookieSample\obj\Debug\netcoreapp2.2\MvcCookie
 E:\Project\Core\IdentityServer\MvcCookieSample\obj\Debug\netcoreapp2.2\MvcCookieSample.pdb
 E:\Project\Core\IdentityServer\MvcCookieSample\obj\Debug\netcoreapp2.2\MvcCookieSample.csproj.CopyComplete
 E:\Project\Core\IdentityServer\MvcCookieSample\obj\Debug\netcoreapp2.2\Razor\Views\Consent\Index.g.cshtml.cs
+E:\Project\Core\IdentityServer\MvcCookieSample\obj\Debug\netcoreapp2.2\MvcCookieSample.csprojAssemblyReference.cache
