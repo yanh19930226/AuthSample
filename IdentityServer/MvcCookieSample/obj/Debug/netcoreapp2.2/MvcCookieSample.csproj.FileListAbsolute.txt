@@ -38,7 +38,6 @@ E:\Project\Core\IdentityServer\MvcCookieSample\bin\Debug\netcoreapp2.2\MvcCookie
 E:\Project\Core\IdentityServer\MvcCookieSample\bin\Debug\netcoreapp2.2\MvcCookieSample.pdb
 E:\Project\Core\IdentityServer\MvcCookieSample\bin\Debug\netcoreapp2.2\MvcCookieSample.Views.dll
 E:\Project\Core\IdentityServer\MvcCookieSample\bin\Debug\netcoreapp2.2\MvcCookieSample.Views.pdb
-E:\Project\Core\IdentityServer\MvcCookieSample\obj\Debug\netcoreapp2.2\MvcCookieSample.csprojAssemblyReference.cache
 E:\Project\Core\IdentityServer\MvcCookieSample\obj\Debug\netcoreapp2.2\MvcCookieSample.csproj.CoreCompileInputs.cache
 E:\Project\Core\IdentityServer\MvcCookieSample\obj\Debug\netcoreapp2.2\MvcCookieSample.RazorAssemblyInfo.cache
 E:\Project\Core\IdentityServer\MvcCookieSample\obj\Debug\netcoreapp2.2\MvcCookieSample.RazorAssemblyInfo.cs
@@ -64,3 +63,4 @@ E:\Project\Core\IdentityServer\MvcCookieSample\obj\Debug\netcoreapp2.2\MvcCookie
 E:\Project\Core\IdentityServer\MvcCookieSample\obj\Debug\netcoreapp2.2\MvcCookieSample.dll
 E:\Project\Core\IdentityServer\MvcCookieSample\obj\Debug\netcoreapp2.2\MvcCookieSample.pdb
 E:\Project\Core\IdentityServer\MvcCookieSample\obj\Debug\netcoreapp2.2\MvcCookieSample.csproj.CopyComplete
+E:\Project\Core\IdentityServer\MvcCookieSample\obj\Debug\netcoreapp2.2\Razor\Views\Consent\Index.g.cshtml.cs
