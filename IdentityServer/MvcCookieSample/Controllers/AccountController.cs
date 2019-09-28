@@ -10,14 +10,24 @@ using Microsoft.AspNetCore.Identity;
 using MvcCookieSample.Models;
 using MvcCookieSample.ViewModels;
 using IdentityServer4.Test;
+using IdentityServer4.Services;
 
 namespace MvcCookieSample.Controllers
 {
     public class AccountController : Controller
     {
+        //使用真实的IdentityServer
+        //private readonly UserManager<ApplicationUser> _userManager;
+        //private readonly SignInManager<ApplicationUser> _signInManager;
+        //private readonly IIdentityServerInteractionService _identityServerInteractionService;
+        //public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, IIdentityServerInteractionService identityServerInteractionService)
+        //{
+        //    _userManager = userManager;
+        //    _signInManager = signInManager;
+        //    _identityServerInteractionService = identityServerInteractionService;
+        //}
         //使用IdentityServer的测试仓储层
         private readonly TestUserStore _users;
-       
         public AccountController(TestUserStore users)
         {
             _users = users;

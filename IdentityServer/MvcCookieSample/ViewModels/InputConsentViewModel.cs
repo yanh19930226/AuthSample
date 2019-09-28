@@ -8,8 +8,8 @@ namespace MvcCookieSample.ViewModels
     public class InputConsentViewModel
     {
         public string Button { get; set; }
-        public IEnumerable<string> DisplayName { get; set; }
-        public bool Descripton { get; set; }
+        public IEnumerable<string> ScopesConsented { get; set; }
+        public bool RememberConsent { get; set; }
         public string ReturnUrl { get; set; }
     }
 }
