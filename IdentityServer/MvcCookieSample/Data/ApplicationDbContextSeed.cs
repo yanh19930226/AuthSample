@@ -20,7 +20,7 @@ namespace MvcCookieSample.Data
                 var defaultUser = new ApplicationUser
                 {
                     UserName = "yanh",
-                    Email = "123@163.com",
+                    Email = "123@qq.com",
                     NormalizedUserName = "admin"
                 };
 

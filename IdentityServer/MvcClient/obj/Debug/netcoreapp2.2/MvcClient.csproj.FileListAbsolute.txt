@@ -27,3 +27,4 @@ E:\Project\Core\IdentityServer\MvcClient\obj\Debug\netcoreapp2.2\MvcClient.Views
 E:\Project\Core\IdentityServer\MvcClient\obj\Debug\netcoreapp2.2\MvcClient.dll
 E:\Project\Core\IdentityServer\MvcClient\obj\Debug\netcoreapp2.2\MvcClient.pdb
 E:\Project\Core\IdentityServer\MvcClient\obj\Debug\netcoreapp2.2\MvcClient.csproj.CopyComplete
+E:\Project\Core\IdentityServer\MvcClient\obj\Debug\netcoreapp2.2\MvcClient.csprojAssemblyReference.cache

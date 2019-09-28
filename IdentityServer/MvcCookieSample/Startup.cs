@@ -32,22 +32,29 @@ namespace MvcCookieSample
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            ////添加DbContext
-            //services.AddDbContext<ApplicationDbContext>(options => { options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]); });
-            ////添加Identity
-            //services.AddIdentity<ApplicationUser, ApplicationUserRole>().AddEntityFrameworkStores<ApplicationDbContext>()
-            //    .AddDefaultTokenProviders();
+            //添加DbContext
+            services.AddDbContext<ApplicationDbContext>(options => { options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]); });
+            //添加Identity
+            services.AddIdentity<ApplicationUser, ApplicationUserRole>().AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
 
-
+            //修改默认严格密码模式
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireLowercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                //options.Password.RequiredLength = 10;
+            });
             services.AddIdentityServer()
                 .AddDeveloperSigningCredential()
                 .AddInMemoryClients(Config.GetClients())
                 .AddInMemoryApiResources(Config.GetResource())
                 .AddInMemoryIdentityResources(Config.GetIdentityResource())
                 //正式数据库
-                //.AddAspNetIdentity<ApplicationUser>();
-                //测试阶段使用
-                .AddTestUsers(Config.GetTestUsers());
+                .AddAspNetIdentity<ApplicationUser>();
+            //测试阶段使用
+            //.AddTestUsers(Config.GetTestUsers());
             services.AddScoped<ConsentServices>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

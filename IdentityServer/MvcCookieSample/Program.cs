@@ -15,12 +15,12 @@ namespace MvcCookieSample
     {
         public static void Main(string[] args)
         {
-            CreateWebHost(args)
+            CreateWebHost(args).MigrateDbContext<ApplicationDbContext>((context, services) =>
+            { new ApplicationDbContextSeed().SeedAsync(context, services).Wait(); })
                 .Run();
         }
         public static IWebHost CreateWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-             .UseUrls("http://localhost:5000")
                 .UseStartup<Startup>().Build();
     }
 }
