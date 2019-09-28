@@ -36,11 +36,11 @@ namespace MvcCookieSample
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //添加DbContext(用户数据库)
+            services.AddDbContext<ApplicationDbContext>(options => { options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]); });
             //动态客户端和资源使用EFcore(IdentityServer数据库)
             const string connectionString = @"Server=.;Database=IdentityServer4;Trusted_Connection=True;MultipleActiveResultSets=true";
             var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
-            //添加DbContext(用户数据库)
-            services.AddDbContext<ApplicationDbContext>(options => { options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]); });
             //添加Identity
             services.AddIdentity<ApplicationUser, ApplicationUserRole>().AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
@@ -93,6 +93,7 @@ namespace MvcCookieSample
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            InitIdentityServerDatabase(app);
             //app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseIdentityServer();
@@ -116,6 +117,7 @@ namespace MvcCookieSample
                     {
                         configurationDbContext.Clients.Add(item.ToEntity());
                     }
+                    configurationDbContext.SaveChanges();
                 }
                 if (!configurationDbContext.ApiResources.Any())
                 {
@@ -123,6 +125,7 @@ namespace MvcCookieSample
                     {
                         configurationDbContext.ApiResources.Add(item.ToEntity());
                     }
+                    configurationDbContext.SaveChanges();
                 }
                 if (!configurationDbContext.IdentityResources.Any())
                 {
@@ -130,6 +133,7 @@ namespace MvcCookieSample
                     {
                         configurationDbContext.IdentityResources.Add(item.ToEntity());
                     }
+                    configurationDbContext.SaveChanges();
                 }
             }
         }
