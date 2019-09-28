@@ -11,33 +11,57 @@ namespace MvcCookieSample.Data
 {
     public static class WebHostMigrationsExtension
     {
-        /// <summary>
-        /// 初始化database方法
-        /// </summary>
-        /// <typeparam name="TContext"></typeparam>
-        /// <param name="host"></param>
-        /// <param name="sedder"></param>
-        /// <returns></returns>
-        public static IWebHost MigrateDbContext<TContext>(this IWebHost host, Action<TContext, IServiceProvider> sedder)
-            where TContext : ApplicationDbContext
+        ///// <summary>
+        ///// 初始化database方法
+        ///// </summary>
+        ///// <typeparam name="TContext"></typeparam>
+        ///// <param name="host"></param>
+        ///// <param name="sedder"></param>
+        ///// <returns></returns>
+        //public static IWebHost MigrateDbContext<TContext>(this IWebHost host, Action<TContext, IServiceProvider> sedder)
+        //    where TContext : ApplicationDbContext
+        //{
+        //    //创建数据库实例在本区域有效
+        //    using (var scope = host.Services.CreateScope())
+        //    {
+        //        var services = scope.ServiceProvider;
+        //        var logger = services.GetRequiredService<ILogger<TContext>>();
+        //        var context = services.GetService<TContext>();
+        //        try
+        //        {
+        //            context.Database.Migrate();//初始化database
+        //            sedder(context, services);
+        //            logger.LogInformation($"执行DbContext{typeof(TContext).Name} seed 成功");
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            logger.LogError(ex, $"执行dbcontext {typeof(TContext).Name}  seed失败");
+        //        }
+        //    }
+        //    return host;
+        //}
+        public static IWebHost MigrateDbContext<TContext>(this IWebHost host, Action<TContext, IServiceProvider> seeder)
+            where TContext : DbContext
         {
-            //创建数据库实例在本区域有效
             using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
                 var logger = services.GetRequiredService<ILogger<TContext>>();
                 var context = services.GetService<TContext>();
+
                 try
                 {
-                    context.Database.Migrate();//初始化database
-                    sedder(context, services);
-                    logger.LogInformation($"执行DbContext{typeof(TContext).Name} seed 成功");
+                    context.Database.Migrate();
+                    seeder(context, services);
+
+                    logger.LogInformation($"执行DBContext {typeof(TContext).Name} seed方法成功");
                 }
-                catch (Exception ex)
+                catch (Exception e)
                 {
-                    logger.LogError(ex, $"执行dbcontext {typeof(TContext).Name}  seed失败");
+                    logger.LogError(e, $"执行DBContext {typeof(TContext).Name} seed方法失败");
                 }
             }
+
             return host;
         }
     }

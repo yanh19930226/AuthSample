@@ -17,6 +17,7 @@ using MvcCookieSample.Models;
 using Microsoft.AspNetCore.Identity;
 using IdentityServer4;
 using MvcCookieSample.Services;
+using IdentityServer4.Services;
 
 namespace MvcCookieSample
 {
@@ -52,7 +53,8 @@ namespace MvcCookieSample
                 .AddInMemoryApiResources(Config.GetResource())
                 .AddInMemoryIdentityResources(Config.GetIdentityResource())
                 //正式数据库
-                .AddAspNetIdentity<ApplicationUser>();
+                .AddAspNetIdentity<ApplicationUser>()
+                .Services.AddScoped<IProfileService, ProfileService>();
             //测试阶段使用
             //.AddTestUsers(Config.GetTestUsers());
             services.AddScoped<ConsentServices>();

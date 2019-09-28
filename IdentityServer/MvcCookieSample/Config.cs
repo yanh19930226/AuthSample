@@ -46,6 +46,8 @@ namespace MvcCookieSample
                    RequireConsent=true,
                    RedirectUris={ "http://localhost:5001/signin-oidc"},
                    PostLogoutRedirectUris={ "http://localhost:5001/signout-callback-oidc" },
+                   //添加返回客户端的ProfileService的配置
+                   AlwaysIncludeUserClaimsInIdToken=true,
                    AllowedScopes={
                        IdentityServerConstants.StandardScopes.Profile,
                        IdentityServerConstants.StandardScopes.OpenId,

@@ -13,14 +13,28 @@ namespace MvcCookieSample
 {
     public class Program
     {
+        //public static void Main(string[] args)
+        //{
+        //    CreateWebHost(args).MigrateDbContext<ApplicationDbContext>((context, services) =>
+        //    { new ApplicationDbContextSeed().SeedAsync(context, services).Wait(); })
+        //        .Run();
+        //}
+        //public static IWebHost CreateWebHost(string[] args) =>
+        //    WebHost.CreateDefaultBuilder(args)
+        //        .UseStartup<Startup>().Build();
+
         public static void Main(string[] args)
         {
-            CreateWebHost(args).MigrateDbContext<ApplicationDbContext>((context, services) =>
-            { new ApplicationDbContextSeed().SeedAsync(context, services).Wait(); })
-                .Run();
+            BuildWebHost(args).MigrateDbContext<ApplicationDbContext>((context, services) =>
+            {
+                 new ApplicationDbContextSeed().SeedAsync(context, services).Wait();
+            }).Run();
         }
-        public static IWebHost CreateWebHost(string[] args) =>
+
+        public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>().Build();
+                .UseStartup<Startup>()
+                .Build();
+
     }
 }

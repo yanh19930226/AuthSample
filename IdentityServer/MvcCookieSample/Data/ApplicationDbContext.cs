@@ -11,6 +11,7 @@ namespace MvcCookieSample.Data
 {
     public class ApplicationDbContext: IdentityDbContext<ApplicationUser, ApplicationUserRole, int>
     {
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
         }
