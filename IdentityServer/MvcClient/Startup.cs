@@ -44,7 +44,7 @@ namespace MvcClient
                 options.ClientId = "mvc";
                 options.ClientSecret = "secret";
                 options.SaveTokens = true;
-
+                //第二张关于返回ProfileService的配置(可以配置想要返回的信息)
                 //options.GetClaimsFromUserInfoEndpoint = true;
 
                 //options.ClaimActions.MapJsonKey("sub", "sub");
